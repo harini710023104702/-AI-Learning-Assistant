@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Generator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    if(localStorage.getItem("loggedIn") !== "true"){
+        window.location.href = "register.html";
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1>AI Learning Assistant</h1>
+        <button onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+
+    <h2>🧪 Quiz Generator</h2>
+
+    <input type="text" id="quizTopic" placeholder="Enter Topic">
+
+    <br><br>
+
+    <button onclick="generateQuiz()">Generate Quiz</button>
+
+
+    <br><br>
+
+    <div id="quizResult">
+        Quiz will appear here...
+    </div>
+
+    <br>
+<div id="scoreResult"></div>
+
+    <a href="index.html" class="back">⬅ Back</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

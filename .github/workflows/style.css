@@ -1,0 +1,529 @@
+/* =========================
+   GLOBAL THEME
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",sans-serif;
+    background:linear-gradient(135deg,#0b1020,#1e293b);
+    color:white;
+    min-height:100vh;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.topbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 40px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.topbar h2{
+    margin:0;
+    color:white;
+}
+
+.status{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+    text-align:center;
+    padding:70px 20px 40px;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:15px;
+    background:linear-gradient(90deg,#38bdf8,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    font-size:18px;
+    color:#cbd5e1;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+.dashboard{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto 50px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    text-align:center;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1{
+    font-size:38px;
+    background:linear-gradient(90deg,#38bdf8,#22c55e);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:10px;
+}
+
+h2{
+    margin-top:20px;
+    color:#e2e8f0;
+}
+
+/* =========================
+   INPUT FIELDS
+========================= */
+input{
+    width:85%;
+    padding:14px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    outline:none;
+    font-size:15px;
+    background:rgba(255,255,255,0.06);
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+input::placeholder{
+    color:#94a3b8;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button{
+    padding:12px 18px;
+    background:linear-gradient(90deg,#38bdf8,#22c55e);
+    color:black;
+    font-weight:bold;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+    margin:6px;
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(56,189,248,0.3);
+}
+
+/* =========================
+   NORMAL LINKS
+========================= */
+a:not(.card){
+    display:inline-block;
+    padding:12px 18px;
+    margin:8px;
+    background:rgba(255,255,255,0.06);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+a:not(.card):hover{
+    background:#38bdf8;
+    color:black;
+    transform:translateY(-3px);
+}
+
+/* =========================
+   OUTPUT BOXES
+========================= */
+#answer,
+#quizResult,
+#notesResult,
+#historyResult,
+#registerResult{
+    margin-top:15px;
+    padding:18px;
+    background:rgba(255,255,255,0.06);
+    border-radius:12px;
+    text-align:left;
+    min-height:60px;
+    white-space:pre-wrap;
+    line-height:1.6;
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+}
+
+/* =========================
+   CHAT HISTORY
+========================= */
+#historyResult p{
+    margin:8px 0;
+    padding:10px;
+    background:rgba(255,255,255,0.05);
+    border-radius:8px;
+}
+
+/* =========================
+   HR
+========================= */
+hr{
+    border:0;
+    height:1px;
+    background:rgba(255,255,255,0.15);
+    margin:25px 0;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+.back{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 15px;
+    background:#ef4444;
+    color:white;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+.back:hover{
+    background:#dc2626;
+}
+
+/* =========================
+   CHAT PAGE
+========================= */
+.chat-wrapper{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+.chat-header{
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.back-btn{
+    color:white;
+    text-decoration:none;
+    padding:8px 15px;
+    background:rgba(255,255,255,0.1);
+    border-radius:8px;
+}
+
+.chat-box{
+    flex:1;
+    padding:20px;
+    overflow-y:auto;
+    display:flex;
+    flex-direction:column;
+}
+
+.msg{
+    padding:12px 15px;
+    margin:8px 0;
+    border-radius:12px;
+    max-width:70%;
+    line-height:1.5;
+}
+
+.user{
+    background:#38bdf8;
+    color:black;
+    align-self:flex-end;
+}
+
+.bot{
+    background:rgba(255,255,255,0.08);
+    color:white;
+    align-self:flex-start;
+}
+
+.chat-input{
+    display:flex;
+    gap:10px;
+    padding:15px;
+    background:rgba(255,255,255,0.05);
+}
+
+.chat-input input{
+    flex:1;
+    width:auto;
+    margin:0;
+}
+
+.chat-input button{
+    margin:0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+    margin-top:30px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+    .topbar{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    input{
+        width:95%;
+    }
+
+    .msg{
+        max-width:90%;
+    }
+
+    .chat-input{
+        flex-direction:column;
+    }
+
+    .chat-input button{
+        width:100%;
+    }
+}
+/* LIGHT MODE */
+
+/* LIGHT MODE */
+
+.light-mode{
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+.light-mode .topbar{
+    background:#e2e8f0;
+}
+
+.light-mode .card{
+    background:#ffffff;
+    color:#1e293b;
+    border:1px solid #cbd5e1;
+}
+
+.light-mode input{
+    background:#e2e8f0;
+    color:#1e293b;
+    border:1px solid #cbd5e1;
+}
+
+.light-mode .hero p{
+    color:#475569;
+}
+
+.light-mode .footer{
+    color:#64748b;
+}
+
+.light-mode #answer,
+.light-mode #quizResult,
+.light-mode #notesResult,
+.light-mode #historyResult,
+.light-mode #registerResult{
+    background:#e2e8f0;
+    color:#1e293b;
+}
+.quiz-card{
+    background: rgba(255,255,255,0.08);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.quiz-card h3{
+    color: #38bdf8;
+}
+
+.quiz-card label{
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#scoreResult{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.ai-box{
+    background: #f0f9ff;      /* Light blue */
+    padding: 20px;
+    border-radius: 15px;
+    border-left: 6px solid #2563EB;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    line-height: 1.8;
+    color: #333;
+}
+
+.ai-box h1{
+    color: #1D4ED8;
+    border-bottom: 2px solid #2563EB;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.ai-box h2{
+    color: #059669;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ai-box p{
+    color: #444;
+    font-size: 16px;
+}
+
+.ai-box ul{
+    padding-left: 25px;
+}
+
+.ai-box li{
+    margin-bottom: 8px;
+}
+
+.ai-box code{
+    background: #E0F2FE;
+    color: #DC2626;
+    padding: 3px 6px;
+    border-radius: 5px;
+}
+
+.ai-box pre{
+    background: #E5E7EB;
+    padding: 12px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+/* HERO IMPROVEMENT */
+.hero {
+    text-align: center;
+    padding: 30px;
+}
+
+/* STATS SECTION */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+/* DASHBOARD CARDS IMPROVED */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    text-decoration: none;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #f9f9ff;
+}
+/* =========================
+   PROGRESS CARD
+========================= */
+
+.progress-card{
+    width:90%;
+    max-width:1200px;
+    margin:20px auto;
+    padding:25px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:18px;
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+.progress-card h2{
+    margin-bottom:20px;
+    color:#38bdf8;
+}
+
+.progress-item{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    font-size:18px;
+}
+
+.progress-item:last-child{
+    border-bottom:none;
+}

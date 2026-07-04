@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat History</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    if(localStorage.getItem("loggedIn") !== "true"){
+        window.location.href = "register.html";
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1>AI Learning Assistant</h1>
+        <button onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+
+    <h2>Chat History</h2>
+
+    <button onclick="loadHistory()">View History</button>
+
+    <br><br>
+
+    <div id="historyResult">
+        Click button to load history...
+    </div>
+
+    <br>
+
+    <a href="index.html" class="back">⬅ Back</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

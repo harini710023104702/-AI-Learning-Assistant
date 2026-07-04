@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="topbar">
+    <h2>📅 AI Study Planner</h2>
+    <a href="index.html" class="back-btn">🏠 Dashboard</a>
+</div>
+
+<div class="container">
+
+    <h1>Create Your Study Plan</h1>
+    <p>Enter your goal and number of study days.</p>
+
+    <br>
+
+    <input
+        type="text"
+        id="goal"
+        placeholder="Example: GATE CSE, Placement, DSA, Java"
+    >
+
+    <br><br>
+
+    <input
+        type="number"
+        id="days"
+        placeholder="Number of Days (7, 15, 30)"
+    >
+
+    <br><br>
+
+    <button onclick="generatePlan()">
+        🚀 Generate Study Plan
+    </button>
+
+    <br><br>
+
+    <div id="studyResult"></div>
+
+</div>
+
+<script src="studyplan.js"></script>
+
+</body>
+</html>

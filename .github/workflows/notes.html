@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes Generator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    if(localStorage.getItem("loggedIn") !== "true"){
+        window.location.href = "register.html";
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <h1>AI Learning Assistant</h1>
+        <button onclick="toggleTheme()">🌙 Theme</button>
+    </div>
+
+    <h2>📝 Notes Generator</h2>
+
+    <input type="text" id="notesTopic" placeholder="Enter Topic">
+
+    <br><br>
+
+    <button onclick="generateNotes()">Generate Notes</button>
+<button onclick="downloadPDF()">📄 Download PDF</button>
+
+    <br><br>
+
+    <div id="notesResult">
+        Notes will appear here...
+    </div>
+
+    <br>
+
+    <a href="index.html" class="back">⬅ Back</a>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

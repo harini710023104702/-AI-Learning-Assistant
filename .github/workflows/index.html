@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Learning Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+if(localStorage.getItem("loggedIn") !== "true"){
+    window.location.href = "register.html";
+}
+</script>
+
+<!-- BACKGROUND EFFECT -->
+<div class="bg"></div>
+
+<!-- TOP NAVBAR -->
+<div class="topbar">
+    <h2>🎓 AI Learning Assistant</h2>
+    <div class="status">🟢 Online</div>
+</div>
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Welcome Back 👋</h1>
+    <p>Track your learning progress and improve daily with AI</p>
+</div>
+
+
+
+<!-- DASHBOARD CARDS -->
+<div class="dashboard">
+
+    <a class="card" href="chat.html">
+        <h3>💬 AI Chat Tutor</h3>
+        <p>Ask any doubt and get instant AI explanations</p>
+    </a>
+
+    <a class="card" href="quiz.html">
+        <h3>📝 Smart Quiz Generator</h3>
+        <p>Auto-generated MCQ tests with scoring system</p>
+    </a>
+
+    <a class="card" href="notes.html">
+        <h3>📚 AI Notes Generator</h3>
+        <p>Structured notes with examples and key points</p>
+    </a>
+
+    <a class="card" href="history.html">
+        <h3>📜 Learning History</h3>
+        <p>View your past chats and activity</p>
+    </a>
+
+    <a class="card" href="aptitude.html">
+        <h3>📊 Placement Training</h3>
+        <p>Practice Trains, Profit & Loss, Percentages</p>
+    </a>
+<a class="card" href="studyplan.html">
+    <h3>📅 AI Study Planner</h3>
+    <p>Generate a personalized study schedule</p>
+</a>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 AI Learning Assistant • Built with ❤️ for Students
+</div>
+<script>
+
+async function loadProgress(){
+
+    try{
+
+        const email = localStorage.getItem("email");
+
+        const response = await fetch("http://localhost:3000/progress",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({
+                email:email
+            })
+        });
+
+        const data = await response.json();
+
+        document.getElementById("quizCount").innerHTML = data.quizzes;
+        document.getElementById("notesCount").innerHTML = data.notes;
+        document.getElementById("planCount").innerHTML = data.plans;
+
+    }
+    catch(error){
+        console.log(error);
+    }
+
+}
+
+loadProgress();
+
+</script>
+
+
+</body>
+</html>

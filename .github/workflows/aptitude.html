@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Aptitude</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+    if(localStorage.getItem("loggedIn") !== "true"){
+        window.location.href = "register.html";
+    }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Learning Assistant</h1>
+
+    <h2>📊 Placement Aptitude Practice</h2>
+
+    <input type="text" id="aptitudeTopic"
+           placeholder="Example: Percentage, Time and Work, Profit and Loss">
+
+    <br><br>
+
+    <button onclick="generateAptitude()">
+        Generate Questions
+    </button>
+
+    <br><br>
+
+    <div id="aptitudeResult">
+        Aptitude questions will appear here...
+    </div>
+
+    <br>
+
+    <a href="index.html" class="back">⬅ Back</a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
